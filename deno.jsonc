@@ -1,0 +1,34 @@
+{
+  "tasks": {
+    "dev": "deno run --watch src/main.ts"
+  },
+  "fmt": {
+    "proseWrap": "preserve",
+    "semiColons": false
+  },
+  "lint": {
+    "rules": {
+      "include": [
+        "camelcase",
+        "default-param-last",
+        "eqeqeq",
+        "explicit-function-return-type",
+        "explicit-module-boundary-types",
+        "no-await-in-loop",
+        "no-const-assign",
+        "no-eval",
+        "no-external-import",
+        "no-implicit-declare-namespace-export",
+        "no-non-null-asserted-optional-chain",
+        "no-non-null-assertion",
+        "no-sparse-arrays",
+        "no-sync-fn-in-async-fn",
+        "no-throw-literal",
+        "no-top-level-await",
+        "no-undef",
+        "single-var-declarator",
+        "triple-slash-reference"
+      ]
+    }
+  }
+}
