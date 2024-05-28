@@ -1,0 +1,41 @@
+name: pr
+
+on:
+  pull_request:
+
+jobs:
+  # A single job that can be set up as a required check
+  checks:
+    runs-on: ubuntu-latest
+
+    needs:
+      - committed
+      - npm-build
+
+    steps:
+      - name: OK
+        run: echo 'All checks succeeded'
+
+  committed:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: crate-ci/committed@v1.0.20
+
+  npm-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm install
+      - name: Check for empty diff
+        run: git diff --exit-code || (echo '::error::Uncommitted changes after build' && exit 1)
