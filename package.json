@@ -1,0 +1,23 @@
+{
+  "name": "cloudformatious-action",
+  "version": "1.0.0",
+  "description": "GitHub Action for [`cloudformatious`](https://github.com/connec/cloudformatious-cli).",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts --license licenses.txt --minify --source-map --target es2022",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/exec": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@vercel/ncc": "^0.38.1",
+    "typescript": "^5.4.5"
+  }
+}

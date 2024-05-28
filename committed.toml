@@ -1,0 +1,11 @@
+subject_length = 65
+subject_capitalized = false
+style = "conventional"
+allowed_types = [
+	"chore",
+	"doc",
+	"feat",
+	"fix",
+	"refactor",
+	"test",
+]
